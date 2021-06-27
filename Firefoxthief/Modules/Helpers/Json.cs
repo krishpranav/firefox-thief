@@ -26,5 +26,10 @@ namespace Stealer.Helpers
             foreach (string value in values)
                 this.Data = this.Data.Replace(value, "");
         }
+
+        public string[] SplitData(string delimiter = "},")
+        {
+            return Regex.Split(this.Data, delimiter);
+        }
     }
 }

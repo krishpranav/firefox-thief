@@ -10,5 +10,16 @@ namespace Stealer.Helpers
         {
             this.Data = data;
         }
+        public string GetValue(string value)
+        {
+            string result = String.Empty;
+            Regex valueRegex = new Regex($"\"{value}\":\"([^\"]+)\"");
+            Match valueMatch = valueRegex.Match(this.Data);
+            if (!valueMatch.Success)
+                return result;
+            
+            result = Regex.Split(valueMatch.Value, "\"")[3];
+            return result;
+        }
     }
 }

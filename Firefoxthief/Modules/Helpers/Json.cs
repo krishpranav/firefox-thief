@@ -21,5 +21,10 @@ namespace Stealer.Helpers
             result = Regex.Split(valueMatch.Value, "\"")[3];
             return result;
         }
+        public void Remove(string[] values)
+        {
+            foreach (string value in values)
+                this.Data = this.Data.Replace(value, "");
+        }
     }
 }

@@ -14,11 +14,23 @@ namespace Stealer.Helpers
             public string sHostKey { get; set; }
             public string sName { get; set; }
             public string sPath { get; set; }
-
             public string sExpiresUtc { get; set; }
             public string sKey { get; set; }
             public string sValue { get; set; }
             public string sIsSecure { get; set; }
         }
+
+        internal struct Site
+    {
+        public string sUrl { get; set; }
+        public string sTitle { get; set; }
+        public int iCount { get; set; }
+    }
+
+    internal struct Bookmark
+    {
+        public string sUrl { get; set; }
+        public string sTitle { get; set; }
+    }
     }
 }
